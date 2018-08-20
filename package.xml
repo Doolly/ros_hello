@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>ros_hello</name>
+  <version>0.1.0</version>
+  <description>The ros_hello package</description>
+  <maintainer email="yundoo_97@naver.com">Yun Yeji</maintainer>
+  <license>TODO</license>
+  <author email="yundoo_97@naver.com">Yun Yeji</author>
+  <url type="website">http://www.naver.com</url>
+  <url type="repository">http://www.naver.com</url>
+  <url type="bugtracker">http://www.naver.com</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>message_generation</run_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+
+  <export> </export>
+</package>
