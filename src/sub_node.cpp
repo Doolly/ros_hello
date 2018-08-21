@@ -4,8 +4,8 @@
 #include <iostream>
 #include "wiringPi.h"
 
-#define LED 1
-#define MOTOR 4
+#define LED 4
+#define MOTOR 1
 
 int moter_val;
 
@@ -39,23 +39,25 @@ int main(int argc, char** argv)
 	wiringPiSetup();
 	pinMode(LED, OUTPUT);
 	pinMode(MOTOR, PWM_OUTPUT);
-	pwmSetClock(192);
+	pwmSetClock(19);
 	pwmSetMode(PWM_MODE_MS);
-	pwmSetRange(2000);
+	pwmSetRange(20000);
 	pwmWrite(MOTOR,1500);
 
 	ros::NodeHandle nh;
 	ros::Subscriber ros_hello_sub1 = nh.subscribe("led_topic",10,LedCallback);
 	ros::Subscriber ros_hello_sub2 = nh.subscribe("motor_topic",10,MotorCallback);
 
-	ros::spin();
 	ros::Rate rate(10);
 	
 while(ros::ok){
 	pwmWrite(MOTOR,moter_val);
+	rate.sleep();
+	ros::spinOnce();
 
 	
 }
+
 return 0;
 }
 
